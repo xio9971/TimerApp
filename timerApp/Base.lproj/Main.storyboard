@@ -1,24 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5ww-r0-JeG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--카운트다운-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="timerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oS2-aQ-i6R">
+                                <rect key="frame" x="0.0" y="144" width="414" height="308"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-Vh-ldu">
+                                <rect key="frame" x="0.0" y="144" width="414" height="308"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dh5-fz-ps6">
+                                <rect key="frame" x="0.0" y="552" width="414" height="261"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AY-v9-VxR">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="261"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="clear" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTouchCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y8H-iT-uDf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoC-GH-Imm">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="261"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" image="playIcon">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTouchPlayorPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gx4-5s-lEn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K7o-Vh-ldu" firstAttribute="leading" secondItem="oS2-aQ-i6R" secondAttribute="leading" id="1Eh-v5-Dyu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dh5-fz-ps6" secondAttribute="trailing" id="8GC-Ot-777"/>
+                            <constraint firstItem="oS2-aQ-i6R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="9JS-r6-TtO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dh5-fz-ps6" secondAttribute="bottom" id="Bac-Ss-tpL"/>
+                            <constraint firstItem="oS2-aQ-i6R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="Fmt-tG-qwH"/>
+                            <constraint firstItem="dh5-fz-ps6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OWR-EM-Pm5"/>
+                            <constraint firstItem="K7o-Vh-ldu" firstAttribute="bottom" secondItem="oS2-aQ-i6R" secondAttribute="bottom" id="cdg-hI-9Al"/>
+                            <constraint firstItem="K7o-Vh-ldu" firstAttribute="trailing" secondItem="oS2-aQ-i6R" secondAttribute="trailing" id="dBN-Ct-bOB"/>
+                            <constraint firstItem="K7o-Vh-ldu" firstAttribute="top" secondItem="oS2-aQ-i6R" secondAttribute="top" id="nU3-Ns-GdQ"/>
+                            <constraint firstItem="dh5-fz-ps6" firstAttribute="top" secondItem="oS2-aQ-i6R" secondAttribute="bottom" constant="100" id="oP7-Lh-BKb"/>
+                            <constraint firstItem="oS2-aQ-i6R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ogM-CX-XLT"/>
+                            <constraint firstItem="oS2-aQ-i6R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vgg-xT-vpi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oS2-aQ-i6R" secondAttribute="trailing" id="yGF-T2-Ddh"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="카운트다운" image="timer" catalog="system" id="6RQ-Rb-a4E"/>
+                    <connections>
+                        <outlet property="picker" destination="oS2-aQ-i6R" id="ySx-yS-vEw"/>
+                        <outlet property="playPauseButton" destination="PoC-GH-Imm" id="Lho-fu-j7b"/>
+                        <outlet property="timeLabel" destination="K7o-Vh-ldu" id="TV7-Fx-6Qa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1584.057971014493" y="-1177.2321428571429"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LY8-Dm-zjG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5ww-r0-JeG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uuN-DE-XWe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="MMW-no-D7N"/>
+                        <segue destination="Geo-SS-bXf" kind="relationship" relationship="viewControllers" id="d6n-II-FK9"/>
+                        <segue destination="8gU-sW-daV" kind="relationship" relationship="viewControllers" id="drq-Bq-4xP"/>
+                        <segue destination="zak-ir-Pre" kind="relationship" relationship="viewControllers" id="Zwg-Es-sId"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SjN-QI-UP4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-391" y="-1906"/>
+        </scene>
+        <!--스톱워치-->
+        <scene sceneID="d6s-5e-9Rk">
+            <objects>
+                <viewController id="8gU-sW-daV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KwG-84-0mR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="usH-2s-FL7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="스톱워치" image="stopwatch" catalog="system" id="trq-30-67G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9R-e4-Pqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="-1177"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="lYH-5B-1UT">
+            <objects>
+                <viewController id="zak-ir-Pre" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="phT-wO-99E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HRk-wU-4SV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="owY-wf-fge"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHu-Ij-oxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967" y="-1177"/>
+        </scene>
+        <!--카운트세트-->
+        <scene sceneID="M9S-O1-NI8">
+            <objects>
+                <viewController id="Geo-SS-bXf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G45-HY-zdK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LkR-c8-9fc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="카운트세트" image="timer.square" catalog="system" id="2Br-R8-6Md"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vh-V9-D1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-758" y="-1177"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clear" catalog="system" width="128" height="114"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="playIcon" width="100" height="100"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+        <image name="timer.square" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
