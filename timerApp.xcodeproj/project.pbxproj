@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891647682605102500A9AB2E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891647672605102500A9AB2E /* SettingController.swift */; };
+		8916476B2605161300A9AB2E /* SettingDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8916476A2605161300A9AB2E /* SettingDetailController.swift */; };
 		893448C426033D99008751C3 /* TtsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893448C326033D99008751C3 /* TtsService.swift */; };
+		8944E0A726046BF500CB36E1 /* TaDa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8944E0A626046BF500CB36E1 /* TaDa.mp3 */; };
+		8944E0AA260471BE00CB36E1 /* Magic Wand Noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8944E0A9260471BE00CB36E1 /* Magic Wand Noise.mp3 */; };
+		8944E0B0260471CB00CB36E1 /* Bye Bye.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8944E0AC260471CB00CB36E1 /* Bye Bye.mp3 */; };
+		8944E0B1260471CB00CB36E1 /* jingles.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8944E0AD260471CB00CB36E1 /* jingles.mp3 */; };
+		8944E0B2260471CB00CB36E1 /* Winning Triumphal Fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8944E0AE260471CB00CB36E1 /* Winning Triumphal Fanfare.mp3 */; };
+		8944E0B3260471CB00CB36E1 /* 5 Sec Crowd Cheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8944E0AF260471CB00CB36E1 /* 5 Sec Crowd Cheer.mp3 */; };
+		8944E0B62604727900CB36E1 /* SoundEffectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8944E0B52604727900CB36E1 /* SoundEffectService.swift */; };
 		89CDE57B260085F50001143F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE57A260085F50001143F /* AppDelegate.swift */; };
 		89CDE57D260085F50001143F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE57C260085F50001143F /* SceneDelegate.swift */; };
 		89CDE57F260085F50001143F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE57E260085F50001143F /* ViewController.swift */; };
@@ -18,7 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891647672605102500A9AB2E /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		8916476A2605161300A9AB2E /* SettingDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailController.swift; sourceTree = "<group>"; };
 		893448C326033D99008751C3 /* TtsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsService.swift; sourceTree = "<group>"; };
+		8944E0A626046BF500CB36E1 /* TaDa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TaDa.mp3; sourceTree = "<group>"; };
+		8944E0A9260471BE00CB36E1 /* Magic Wand Noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Magic Wand Noise.mp3"; sourceTree = "<group>"; };
+		8944E0AC260471CB00CB36E1 /* Bye Bye.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bye Bye.mp3"; sourceTree = "<group>"; };
+		8944E0AD260471CB00CB36E1 /* jingles.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jingles.mp3; sourceTree = "<group>"; };
+		8944E0AE260471CB00CB36E1 /* Winning Triumphal Fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Winning Triumphal Fanfare.mp3"; sourceTree = "<group>"; };
+		8944E0AF260471CB00CB36E1 /* 5 Sec Crowd Cheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5 Sec Crowd Cheer.mp3"; sourceTree = "<group>"; };
+		8944E0B52604727900CB36E1 /* SoundEffectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectService.swift; sourceTree = "<group>"; };
 		89CDE577260085F50001143F /* timerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CDE57A260085F50001143F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CDE57C260085F50001143F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +59,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8944E0A126046B5A00CB36E1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8944E0AF260471CB00CB36E1 /* 5 Sec Crowd Cheer.mp3 */,
+				8944E0AC260471CB00CB36E1 /* Bye Bye.mp3 */,
+				8944E0AD260471CB00CB36E1 /* jingles.mp3 */,
+				8944E0AE260471CB00CB36E1 /* Winning Triumphal Fanfare.mp3 */,
+				8944E0A9260471BE00CB36E1 /* Magic Wand Noise.mp3 */,
+				8944E0A626046BF500CB36E1 /* TaDa.mp3 */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		89CDE56E260085F50001143F = {
 			isa = PBXGroup;
 			children = (
+				8944E0A126046B5A00CB36E1 /* Resource */,
 				89CDE579260085F50001143F /* timerApp */,
 				89CDE578260085F50001143F /* Products */,
 			);
@@ -64,6 +96,9 @@
 				89CDE57C260085F50001143F /* SceneDelegate.swift */,
 				89CDE57E260085F50001143F /* ViewController.swift */,
 				893448C326033D99008751C3 /* TtsService.swift */,
+				8944E0B52604727900CB36E1 /* SoundEffectService.swift */,
+				891647672605102500A9AB2E /* SettingController.swift */,
+				8916476A2605161300A9AB2E /* SettingDetailController.swift */,
 				89CDE580260085F50001143F /* Main.storyboard */,
 				89D3586F260253A200E6C91A /* CircleButton.swift */,
 				89CDE583260085F60001143F /* Assets.xcassets */,
@@ -130,9 +165,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8944E0A726046BF500CB36E1 /* TaDa.mp3 in Resources */,
+				8944E0B0260471CB00CB36E1 /* Bye Bye.mp3 in Resources */,
 				89CDE587260085F60001143F /* LaunchScreen.storyboard in Resources */,
 				89CDE584260085F60001143F /* Assets.xcassets in Resources */,
 				89CDE582260085F50001143F /* Main.storyboard in Resources */,
+				8944E0B3260471CB00CB36E1 /* 5 Sec Crowd Cheer.mp3 in Resources */,
+				8944E0B1260471CB00CB36E1 /* jingles.mp3 in Resources */,
+				8944E0B2260471CB00CB36E1 /* Winning Triumphal Fanfare.mp3 in Resources */,
+				8944E0AA260471BE00CB36E1 /* Magic Wand Noise.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +186,12 @@
 			files = (
 				89CDE57F260085F50001143F /* ViewController.swift in Sources */,
 				893448C426033D99008751C3 /* TtsService.swift in Sources */,
+				8944E0B62604727900CB36E1 /* SoundEffectService.swift in Sources */,
 				89CDE57B260085F50001143F /* AppDelegate.swift in Sources */,
 				89CDE57D260085F50001143F /* SceneDelegate.swift in Sources */,
+				8916476B2605161300A9AB2E /* SettingDetailController.swift in Sources */,
 				89D35870260253A200E6C91A /* CircleButton.swift in Sources */,
+				891647682605102500A9AB2E /* SettingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

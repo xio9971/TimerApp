@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
         
@@ -36,15 +37,15 @@ class ViewController: UIViewController {
     
     var timer = Timer()
     
-    let ttsService = TtsService()
+    let ttsService = TtsService.shared
+    let soundEffectService = SoundEffectService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setHidden(isTimerFirstOn)
         picker.backgroundColor = UIColor.black
-        
-        
         picker.setValue(UIColor.white, forKey: "textColor")
+        
         
         //picker.setValue(UIFont.systemFont(ofSize: 30, weight: .bold), forKey: "fontSyle")
         //picker.setValue(UIFont.boldSystemFont(ofSize: 4), forKey: "")
@@ -76,7 +77,7 @@ class ViewController: UIViewController {
 //
 //        formatter.unitsStyle = .positional
 //        formatter.allowedUnits = [.hour, .minute, .second]
-//        formatter.zeroFormattingBehavior = .pad
+//        formatter.zeroFormattingBehxavior = .pad
 //
 //        //numEntered += inputString
 //        numEntered = "708"
@@ -88,7 +89,7 @@ class ViewController: UIViewController {
     
     // 취소 버튼 클릭시
     @IBAction func didTouchCancel(_ sender: UIButton) {
-        
+
         setInit()
     }
 
@@ -185,7 +186,8 @@ class ViewController: UIViewController {
         
         if on {
             
-            ttsService.say("Starting timer")
+            ttsService.say(ttsService.startStr)
+            print(ttsService.startStr)
             
             // 시작을알리고 카운트다운 하게되면 밀리는 경우가 발생,  딜레이 1초
             sleep(1)
@@ -213,13 +215,15 @@ class ViewController: UIViewController {
                 }else if strongSelf.duration == 0{
                     
                     strongSelf.setInit()
+                    // soundEffectService.play 타이머 종료 효과음
+                    strongSelf.soundEffectService.play()
                     strongSelf.timer.invalidate()
                 }
             })
             
         } else {
             
-            ttsService.say("Paused timer.")
+            ttsService.say(ttsService.endStr)
             timer.invalidate()
         }
     }
