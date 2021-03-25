@@ -117,14 +117,15 @@ class SettingDetailController: UITableViewController {
         // 카운트다운 음성
         case "soundEffect":
 
-            // 선택한음성을 키 : countDownSoundFileName 로 카운트다운 음성 설정
+            // 선택한 효과음을 키 : countDownSoundFileName 로 저장
             UserDefaults.standard.set(dataArr[indexPath.row], forKey: "soundEffect")
             settingInfo.setInfo.soundEffect = dataArr[indexPath.row]
             self.navigationController?.popViewController(animated: true)
         case "voiceLanguage":
 
-            var language = TtsService.shared.languageList[dataArr[indexPath.row]]
+            let language = TtsService.shared.languageList[dataArr[indexPath.row]]
             
+            // 선택한 언어를 키 : voiceLanguage 로 저장
             UserDefaults.standard.set(language, forKey: "voiceLanguage")
             settingInfo.setInfo.voiceLanguage = language!
             TtsService.shared.language = language!

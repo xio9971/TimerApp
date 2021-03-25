@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     
     // 타이머 실행여부
     var isTimerOn = false
-    // 타이머 처음 실행 여부
+    // 타이머 처음 실행중 여부 (작동중, 중지 상태도 true)
     var isTimerFirstOn = false
     // 카운트 다운 시간
     var duration = 0
@@ -187,7 +187,6 @@ class ViewController: UIViewController {
         if on {
             
             ttsService.say(ttsService.startStr)
-            print(ttsService.startStr)
             
             // 시작을알리고 카운트다운 하게되면 밀리는 경우가 발생,  딜레이 1초
             sleep(1)

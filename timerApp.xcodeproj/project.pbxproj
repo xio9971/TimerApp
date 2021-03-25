@@ -23,6 +23,7 @@
 		89CDE582260085F50001143F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE580260085F50001143F /* Main.storyboard */; };
 		89CDE584260085F60001143F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE583260085F60001143F /* Assets.xcassets */; };
 		89CDE587260085F60001143F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE585260085F60001143F /* LaunchScreen.storyboard */; };
+		89D284B5260B1CA400E870A9 /* StopWatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D284B4260B1CA400E870A9 /* StopWatchController.swift */; };
 		89D35870260253A200E6C91A /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3586F260253A200E6C91A /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		89CDE583260085F60001143F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89CDE586260085F60001143F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89CDE588260085F60001143F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D284B4260B1CA400E870A9 /* StopWatchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchController.swift; sourceTree = "<group>"; };
 		89D3586F260253A200E6C91A /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				89CDE57A260085F50001143F /* AppDelegate.swift */,
 				89CDE57C260085F50001143F /* SceneDelegate.swift */,
 				89CDE57E260085F50001143F /* ViewController.swift */,
+				89D284B4260B1CA400E870A9 /* StopWatchController.swift */,
 				893448C326033D99008751C3 /* TtsService.swift */,
 				8944E0B52604727900CB36E1 /* SoundEffectService.swift */,
 				891647672605102500A9AB2E /* SettingController.swift */,
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CDE57F260085F50001143F /* ViewController.swift in Sources */,
+				89D284B5260B1CA400E870A9 /* StopWatchController.swift in Sources */,
 				893448C426033D99008751C3 /* TtsService.swift in Sources */,
 				8944E0B62604727900CB36E1 /* SoundEffectService.swift in Sources */,
 				89CDE57B260085F50001143F /* AppDelegate.swift in Sources */,
