@@ -119,7 +119,7 @@ class ViewController: UIViewController {
             formatter.unitsStyle = .positional
             formatter.allowedUnits = [.hour, .minute, .second]
             formatter.zeroFormattingBehavior = .pad
-
+            
             timeLabel.text = formatter.string(from: Double(timeInterval))
             duration = timeInterval
         
