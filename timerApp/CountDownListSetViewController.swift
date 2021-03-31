@@ -12,7 +12,7 @@ class CountDownListSetViewController: UIViewController {
     @IBOutlet weak var timerName: UITextField!
     @IBOutlet weak var picker: UIPickerView! { didSet {picker.delegate = self}}
     
-    let shared = CountDownListViewController.shared
+    let contDownList = CountDownListViewController.shared
     
     var dataList: [CountDownSetData] = []
     
@@ -24,7 +24,7 @@ class CountDownListSetViewController: UIViewController {
      그런데 json으로 저장할시 셀순서대로 저장 됨으로 tagNum 값이 필요지 않게됨
      혹시나 필요할 수 있음으로 남겨둠
      */
-    var tagNum: Int? = nil
+    var index: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +35,14 @@ class CountDownListSetViewController: UIViewController {
         // 네비게이션바 오른쪽 아이템으로 저장버튼 추가
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(save))
         
-        guard let tag = self.tagNum else {
+        guard let index = self.index else {
             return
         }
         
-        timerName.text = dataList[tag].name
+        timerName.text = dataList[index].name
         
 
-        let time = dataList[tag].time
+        let time = dataList[index].time
         
         picker.selectRow((time / 3600), inComponent: 0, animated: false)
         picker.selectRow((time / 60) % 60, inComponent: 1, animated: false)
@@ -69,23 +69,23 @@ class CountDownListSetViewController: UIViewController {
         }
     
         
-        if self.tagNum != nil {
+        if let index = self.index {
             
-            self.dataList[tagNum!].name = title
-            self.dataList[tagNum!].time = timeInterval
+            dataList[index].name = title
+            dataList[index].time = timeInterval
         }else {
             
             var tag = 0
             
             if !dataList.isEmpty {
-                tag = self.dataList.max { $0.tag < $1.tag }!.tag + 1
+                tag = dataList.max { $0.tag < $1.tag }!.tag + 1
             }
             
             let tempStruct: CountDownSetData = CountDownSetData(tag: tag, name: title, time: timeInterval)
-            self.dataList.append(tempStruct)
+            dataList.append(tempStruct)
         }
         
-        shared.save(saveList: self.dataList)
+        contDownList.save(saveList: dataList)
         self.navigationController?.popViewController(animated: true)
     }
     

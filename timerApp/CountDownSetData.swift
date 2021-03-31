@@ -25,3 +25,18 @@ struct CountDownSetData: Codable {
     
 
 }
+
+// TimeInterval을 HH:MM:SS 으로 포멧팅
+func timeFormatting(duration: Double?) -> String {
+    
+    guard let duration = duration else {
+        return ""
+    }
+    
+    let formatter = DateComponentsFormatter()
+    formatter.unitsStyle = .positional
+    formatter.allowedUnits = [.hour, .minute, .second]
+    formatter.zeroFormattingBehavior = .pad
+    
+    return formatter.string(from: duration)!
+}

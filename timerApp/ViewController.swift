@@ -203,8 +203,6 @@ class ViewController: UIViewController {
                 formatter.allowedUnits = [.hour, .minute, .second]
                 formatter.zeroFormattingBehavior = .pad
                 
-//                print(Double(strongSelf.duration))
-//                print(formatter.string(from: Double(strongSelf.duration)))
                 strongSelf.timeLabel.text = formatter.string(from: Double(strongSelf.duration))
                 
                 // 10초 이하부터 카운트다운 시작

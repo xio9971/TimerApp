@@ -19,6 +19,7 @@ class CountDownListViewController: UIViewController {
     
     var url: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("dataList.json")
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,6 +92,7 @@ class CountDownListViewController: UIViewController {
     
     }
     
+    // 저장
     func save(saveList: [CountDownSetData]) {
         
         let jsonEncoder = JSONEncoder()
@@ -118,7 +120,6 @@ class CountDownListViewController: UIViewController {
         let CountDownListSetView = self.storyboard?.instantiateViewController(withIdentifier: "CountDownListSetView") as! CountDownListSetViewController
 
         CountDownListSetView.dataList = self.dataList
-        //CountDownListSetView.tagNum = 1
         
         self.navigationController?.pushViewController(CountDownListSetView, animated: true)
     }
@@ -135,7 +136,7 @@ class CountDownListViewController: UIViewController {
         if tableView.isEditing {
             tableView.isEditing = false
             editBtn.title = "Edit"
-            save(saveList: dataList)
+            save(saveList: self.dataList)
         }else {
             tableView.isEditing = true
             editBtn.title = "Done"
@@ -169,7 +170,8 @@ extension CountDownListViewController : UITableViewDataSource, UITableViewDelega
         let CountDownListSetView = self.storyboard?.instantiateViewController(withIdentifier: "CountDownListSetView") as! CountDownListSetViewController
 
         CountDownListSetView.dataList = self.dataList
-        CountDownListSetView.tagNum = indexPath.row
+        CountDownListSetView.index = indexPath.row
+        
 
         self.navigationController?.pushViewController(CountDownListSetView, animated: true)
     }
@@ -177,9 +179,10 @@ extension CountDownListViewController : UITableViewDataSource, UITableViewDelega
     // 삭제시
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
+            
             dataList.remove(at: indexPath.item)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            
+            save(saveList: self.dataList)
         }
     }
 
