@@ -111,17 +111,10 @@ class ViewController: UIViewController {
         
         if isTimerFirstOn == false {
             
-            let timeInterval = picker.selectedRow(inComponent: 0) * 3600
-            + picker.selectedRow(inComponent: 1) * 60
-            + picker.selectedRow(inComponent: 2)
-      
-            let formatter = DateComponentsFormatter()
-            formatter.unitsStyle = .positional
-            formatter.allowedUnits = [.hour, .minute, .second]
-            formatter.zeroFormattingBehavior = .pad
             
-            timeLabel.text = formatter.string(from: Double(timeInterval))
-            duration = timeInterval
+            duration = calInterval(hh: picker.selectedRow(inComponent: 0), mm: picker.selectedRow(inComponent: 1), ss: picker.selectedRow(inComponent: 2))
+        
+            timeLabel.text = timeFormatting(duration: Double(duration))
         
             if duration > 0 {
                 

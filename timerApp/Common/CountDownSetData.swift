@@ -14,13 +14,7 @@ struct CountDownSetData: Codable {
     var time: Int
     
     var hhmmssTime: String  {
-
-        let formatter = DateComponentsFormatter()
-        
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.zeroFormattingBehavior = .pad
-        return formatter.string(from: Double(time)) ?? "00:00:00"
+        return timeFormatting(duration: Double(time))
     }
     
 
@@ -40,3 +34,9 @@ func timeFormatting(duration: Double?) -> String {
     
     return formatter.string(from: duration)!
 }
+
+func calInterval(hh: Int, mm: Int, ss: Int) -> Int {
+    return hh * 3600 + mm * 60 + ss
+}
+
+

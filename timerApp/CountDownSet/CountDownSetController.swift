@@ -13,7 +13,7 @@ class CountDownSetController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
     
-    let contDownList = CountDownListViewController.shared
+    let listManage = ListManageService.shared
     let ttsService = TtsService.shared
     var timer = Timer()
     let soundEffectService = SoundEffectService()
@@ -25,7 +25,6 @@ class CountDownSetController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contDownList.loadData()
     }
     
     
@@ -36,7 +35,6 @@ class CountDownSetController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.navigationBar.isHidden = true
     
-        contDownList.loadData()
         dataRefresh()
     }
 
@@ -80,7 +78,7 @@ class CountDownSetController: UIViewController {
     func dataRefresh() {
         
         // 저장된 카운트다운리스트가 없을경우
-        if contDownList.dataList.count == 0 {
+        if listManage.dataList.count == 0 {
         
             duration = 0
             currentPlayInedx = 0
@@ -88,10 +86,10 @@ class CountDownSetController: UIViewController {
             timeLabel.text = "00:00:00"
         }else {
             
-            duration = contDownList.dataList[0].time
+            duration = listManage.dataList[0].time
             currentPlayInedx = 0
-            timerName.text = contDownList.dataList[0].name
-            timeLabel.text = timeFormatting(duration: Double(contDownList.dataList[0].time))
+            timerName.text = listManage.dataList[0].name
+            timeLabel.text = timeFormatting(duration: Double(listManage.dataList[0].time))
         }
     }
     
@@ -124,17 +122,14 @@ class CountDownSetController: UIViewController {
                     strongSelf.ttsService.say("\(strongSelf.duration)")
                 }else if strongSelf.duration == 0{
                     
-                    let maxIndex = strongSelf.contDownList.dataList.count - 1
+                    let maxIndex = strongSelf.listManage.dataList.count - 1
                     
                     if(maxIndex > strongSelf.currentPlayInedx) {
                         
                         strongSelf.currentPlayInedx += 1
-                        strongSelf.duration = strongSelf.contDownList.dataList[strongSelf.currentPlayInedx].time
-                        strongSelf.timerName.text = strongSelf.contDownList.dataList[strongSelf.currentPlayInedx].name
-                        strongSelf.timeLabel.text = strongSelf.contDownList.dataList[strongSelf.currentPlayInedx].hhmmssTime
-                        
-                        //                        strongSelf.timeLabel.text = timeFormatting(duration: Double(strongSelf.contDownList.dataList[strongSelf.currentPlayInedx].time))
-                        
+                        strongSelf.duration = strongSelf.listManage.dataList[strongSelf.currentPlayInedx].time
+                        strongSelf.timerName.text = strongSelf.listManage.dataList[strongSelf.currentPlayInedx].name
+                        strongSelf.timeLabel.text = strongSelf.listManage.dataList[strongSelf.currentPlayInedx].hhmmssTime
                     }else {
                         
                         strongSelf.soundEffectService.play()

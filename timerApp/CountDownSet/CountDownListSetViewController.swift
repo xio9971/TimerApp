@@ -12,9 +12,7 @@ class CountDownListSetViewController: UIViewController {
     @IBOutlet weak var timerName: UITextField!
     @IBOutlet weak var picker: UIPickerView! { didSet {picker.delegate = self}}
     
-    let contDownList = CountDownListViewController.shared
-    
-    var dataList: [CountDownSetData] = []
+    let listManage = ListManageService.shared
     
     /*
      tagNum 이라는 변수로 원래 의도한것은
@@ -29,6 +27,8 @@ class CountDownListSetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timerName.layer.borderColor = UIColor.white.cgColor
+        timerName.layer.borderWidth = 1
         picker.backgroundColor = UIColor.black
         picker.setValue(UIColor.white, forKey: "textColor")
         
@@ -39,10 +39,10 @@ class CountDownListSetViewController: UIViewController {
             return
         }
         
-        timerName.text = dataList[index].name
+        timerName.text = listManage.dataList[index].name
         
 
-        let time = dataList[index].time
+        let time = listManage.dataList[index].time
         
         picker.selectRow((time / 3600), inComponent: 0, animated: false)
         picker.selectRow((time / 60) % 60, inComponent: 1, animated: false)
@@ -68,28 +68,26 @@ class CountDownListSetViewController: UIViewController {
             return
         }
     
-        
+        // index가 있을경우 수정건, 없을경우 신규건으로 판단
         if let index = self.index {
             
-            dataList[index].name = title
-            dataList[index].time = timeInterval
+            listManage.dataList[index].name = title
+            listManage.dataList[index].time = timeInterval
         }else {
             
             var tag = 0
             
-            if !dataList.isEmpty {
-                tag = dataList.max { $0.tag < $1.tag }!.tag + 1
+            if !listManage.dataList.isEmpty {
+                tag = listManage.dataList.max { $0.tag < $1.tag }!.tag + 1
             }
             
             let tempStruct: CountDownSetData = CountDownSetData(tag: tag, name: title, time: timeInterval)
-            dataList.append(tempStruct)
+            listManage.dataList.append(tempStruct)
         }
         
-        contDownList.save(saveList: dataList)
+        listManage.save()
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
     
 }
 
