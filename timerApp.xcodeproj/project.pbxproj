@@ -22,7 +22,6 @@
 		8946EB20260C46AB0025C60E /* CountDownListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8946EB1F260C46AB0025C60E /* CountDownListViewController.swift */; };
 		89845CD42614748B00E882F7 /* ListManageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89845CD32614748B00E882F7 /* ListManageService.swift */; };
 		89892B15260CF81500D0FA9C /* CountDownSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89892B14260CF81500D0FA9C /* CountDownSetData.swift */; };
-		89892B1C260D018D00D0FA9C /* dataList.json in Resources */ = {isa = PBXBuildFile; fileRef = 89892B1B260D018D00D0FA9C /* dataList.json */; };
 		89CDE57B260085F50001143F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE57A260085F50001143F /* AppDelegate.swift */; };
 		89CDE57D260085F50001143F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE57C260085F50001143F /* SceneDelegate.swift */; };
 		89CDE57F260085F50001143F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE57E260085F50001143F /* ViewController.swift */; };
@@ -49,7 +48,6 @@
 		8946EB1F260C46AB0025C60E /* CountDownListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownListViewController.swift; sourceTree = "<group>"; };
 		89845CD32614748B00E882F7 /* ListManageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManageService.swift; sourceTree = "<group>"; };
 		89892B14260CF81500D0FA9C /* CountDownSetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownSetData.swift; sourceTree = "<group>"; };
-		89892B1B260D018D00D0FA9C /* dataList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = dataList.json; path = timerApp/Assets.xcassets/dataList.dataset/dataList.json; sourceTree = "<group>"; };
 		89CDE577260085F50001143F /* timerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CDE57A260085F50001143F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CDE57C260085F50001143F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		89CDE56E260085F50001143F = {
 			isa = PBXGroup;
 			children = (
-				89892B1B260D018D00D0FA9C /* dataList.json */,
 				8944E0A126046B5A00CB36E1 /* Resource */,
 				89CDE579260085F50001143F /* timerApp */,
 				89CDE578260085F50001143F /* Products */,
@@ -226,7 +223,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89892B1C260D018D00D0FA9C /* dataList.json in Resources */,
 				8944E0A726046BF500CB36E1 /* TaDa.mp3 in Resources */,
 				8944E0B0260471CB00CB36E1 /* Bye Bye.mp3 in Resources */,
 				89CDE587260085F60001143F /* LaunchScreen.storyboard in Resources */,
@@ -406,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NCRHX8TKM2;
 				INFOPLIST_FILE = timerApp/Info.plist;
@@ -413,8 +410,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jcg.timerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -425,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NCRHX8TKM2;
 				INFOPLIST_FILE = timerApp/Info.plist;
@@ -432,8 +432,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jcg.timerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

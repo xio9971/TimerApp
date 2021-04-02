@@ -352,7 +352,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x0-hv-8dz">
-                                <rect key="frame" x="330" y="88" width="57" height="100"/>
+                                <rect key="frame" x="337" y="88" width="57" height="100"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="timer.square" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
@@ -376,9 +376,9 @@
                             <constraint firstItem="oyh-Fu-Axr" firstAttribute="centerY" secondItem="noH-lg-b1T" secondAttribute="centerY" constant="-150" id="Xx4-54-HNN"/>
                             <constraint firstItem="XUO-pi-aFj" firstAttribute="top" secondItem="oyh-Fu-Axr" secondAttribute="bottom" constant="100" id="ac1-ze-x31"/>
                             <constraint firstItem="oyh-Fu-Axr" firstAttribute="top" secondItem="3x0-hv-8dz" secondAttribute="bottom" id="b9r-4X-jb9"/>
+                            <constraint firstItem="9TB-NM-tcH" firstAttribute="trailing" secondItem="3x0-hv-8dz" secondAttribute="trailing" constant="20" id="bnO-iZ-BWD"/>
                             <constraint firstItem="oyh-Fu-Axr" firstAttribute="top" secondItem="9TB-NM-tcH" secondAttribute="top" constant="100" id="cpa-8T-zbA"/>
                             <constraint firstItem="dpm-YG-tz5" firstAttribute="top" secondItem="oyh-Fu-Axr" secondAttribute="top" id="eQj-yw-cx4"/>
-                            <constraint firstItem="3x0-hv-8dz" firstAttribute="leading" secondItem="9TB-NM-tcH" secondAttribute="leading" constant="330" id="fTL-W5-MJk"/>
                             <constraint firstItem="9TB-NM-tcH" firstAttribute="trailing" secondItem="oyh-Fu-Axr" secondAttribute="trailing" id="ff6-84-huj"/>
                             <constraint firstItem="9TB-NM-tcH" firstAttribute="bottom" secondItem="XUO-pi-aFj" secondAttribute="bottom" id="syB-9c-FWo"/>
                         </constraints>
